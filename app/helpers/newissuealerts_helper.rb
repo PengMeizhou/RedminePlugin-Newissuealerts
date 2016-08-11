@@ -1,0 +1,2 @@
+module NewissuealertsHelper
+end

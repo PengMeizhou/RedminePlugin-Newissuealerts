@@ -1,0 +1,47 @@
+= newissuealerts
+
+Description goes here
+
+
+Build_Plugin
+********************************************************************************************
+set RAILS_ENV=production
+
+bundle exec ruby bin/rails generate redmine_plugin Autoraisetickets
+bundle exec ruby bin/rails generate redmine_plugin_model autoraisetickets autoraiseticket tracker_id:integer relation:string subject_before:string subject_after:string status_before:integer status_after:integer relation_tracker_id:integer some_commnets:string
+bundle exec rake redmine:plugins:migrate
+bundle exec ruby bin/rails generate redmine_plugin_controller Autoraisetickets autoraisetickets index new edit
+********************************************************************************************
+
+Intall_Plugin
+********************************************************************************************
+cd C:\Bitnami\redmine-3.3.0-1\apps\redmine\htdocs
+bundle install --without development test postgresql sqlite --no-deployment
+bundle install --without development test postgresql sqlite --deployment
+ruby bin/rake redmine:plugins RAILS_ENV=production
+********************************************************************************************
+
+TroubleShootting
+********************************************************************************************
+https://wiki.bitnami.com/Applications/BitNami_Redmine
+Windows troubleshooting
+If you are using the Bitnami Redmine installer for Windows and your thin servers don't run after installing a plugin you can run them manually to see what is the error.
+ Go to Bitnami Redmine console at Start -> Program Files -> Bitnami Redmine Stack -> Use Redmine
+ Go to apps/redmine/htdocs
+ Run the following command:
+bundle exec thin start -e production -p 3001 --prefix /redmine
+Port: 3001 
+Now you can see the error starting the servers or accesing through your web browser at http://127.0.0.1:3001/redmin
+********************************************************************************************
+
+Start On Development Mode
+********************************************************************************************
+cd C:\Bitnami\redmine-3.3.0-1\apps\redmine\htdocs
+rails server
+********************************************************************************************
+
+Logs Info
+********************************************************************************************
+C:\Bitnami\redmine-3.3.0-1\apps\redmine\htdocs\log
+********************************************************************************************
+
