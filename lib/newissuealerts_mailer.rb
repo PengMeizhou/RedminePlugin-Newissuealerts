@@ -1,5 +1,3 @@
-require "mailer"
-
 class NewissuealertsMailer < ActionMailer::Base
   def newissuealert( email, issue, newissuealert)
     project = issue.project
