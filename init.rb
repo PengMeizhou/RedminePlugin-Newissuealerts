@@ -30,8 +30,8 @@ Redmine::Plugin.register :newissuealerts do
   author 'Peng Meizhou'
   description 'This is a plugin for Redmine new issue alerts'
   version '0.0.1'
-  url 'http://localhost/redmine/newissuealerts'
-  author_url 'http://example.com/about'
+  url 'https://github.com/PengMeizhou/RedminePlugin-Newissuealerts'
+  author_url 'https://github.com/PengMeizhou/RedminePlugin-Newissuealerts'
   
    # This plugin adds a project module
   # It can be enabled/disabled at project level (Project settings -> Modules)

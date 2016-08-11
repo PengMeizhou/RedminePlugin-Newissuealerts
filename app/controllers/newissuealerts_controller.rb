@@ -27,6 +27,7 @@ class NewissuealertsController < ApplicationController
   end
 
   def edit
+    params.permit!
     @newissuealert = Newissuealert.find(params[:id])
     if request.post?
       if params[:delete]
