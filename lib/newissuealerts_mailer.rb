@@ -1,4 +1,4 @@
-class NewissuealertsMailer < ActionMailer::Base
+class NewissuealertsMailer < Mailer
   def newissuealert( email, issue, newissuealert)
     project = issue.project
     tracker = issue.tracker
